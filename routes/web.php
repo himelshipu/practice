@@ -42,3 +42,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('category/all', 'CategoryController@AllCat')->name('all.category');
+Route::get('category/all', 'CategoryController@AllCat')->name('all.category');
+Route::post('category/add', 'CategoryController@AddCat')->name('store.category');
