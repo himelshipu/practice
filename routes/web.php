@@ -33,7 +33,11 @@ Route::get('/all_contact', function () {
 })->name('contact');
 
 
-Route::get('/all_contact','ContactController@contact')->name('contact');
+Route::get('/all_contact', 'ContactController@contact')->name('contact');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
