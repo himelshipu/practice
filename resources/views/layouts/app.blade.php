@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-cyan.min.css" />
+    <style>
+
+    </style>
 </head>
 <body>
     <div id="app">
@@ -26,7 +30,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a class="navbar-brand" href="{{url('category/all')}}">All Category</a>
+                {{--<a class="navbar-brand" href="{{url('category/all')}}">All Category</a>--}}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -74,8 +78,9 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            @yield(/** @lang text */'content')
         </main>
     </div>
+
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,36 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-/*Route::get('/home', function () {
-    return view('welcome');
-});*/
-
-Route::get('/service', function () {
-    return view('service');
-});
-
-Route::get('/about', function () {
-    return view('about');
-})->middleware('age');
-
-Route::get('/all_contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/', 'HomeController@show');
+Route::post('/', 'HomeController@storePhoneNumber');
+Route::post('/custom', 'HomeController@sendCustomMessage');
 
 
-Route::get('/all_contact', 'ContactController@contact')->name('contact');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('category/all', 'CategoryController@AllCat')->name('all.category');
-Route::get('category/all', 'CategoryController@AllCat')->name('all.category');
-Route::post('category/add', 'CategoryController@AddCat')->name('store.category');
