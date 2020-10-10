@@ -39,7 +39,6 @@ class HomeController extends Controller
         return back()->with(['success' => "Messages Sent Successfully!!"]);
     }
 
-
     private function sendMessage($message, $recipients)
     {
         $account_sid = getenv("TWILIO_SID");
